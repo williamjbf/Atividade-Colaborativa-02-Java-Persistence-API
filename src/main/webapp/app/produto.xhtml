@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<f:view>
+    <h1>Tela de produto</h1>
+
+    <h:form >
+        <lable for="productId">product code</lable>
+        <input type="text" id="productId"
+               jsf:value="#{productBean.product.code}"
+               jsf:required="true"/>
+        <lable for="productDescription">product description</lable>
+        <input type="text" id="productDescription"
+               jsf:value="#{productBean.product.description}"
+               jsf:required="true"/>
+        <lable for="productvalue">product value</lable>
+        <input type="text" id="productvalue"
+               jsf:value="#{productBean.product.value}"
+               jsf:required="true"/>
+        <input id="btn" class="btn" type="submit"
+               jsf:action="#{productBean.save()}" jsf:value="++"/>
+
+        <h:outputText value="#{productBean.product.description}"/>
+    </h:form>
+</f:view>
+</html>
